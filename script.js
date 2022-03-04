@@ -64,13 +64,19 @@ function generate() {
 generate();
 
 function genderByName(maleSrc, femaleSrc) {
-    if (name1 == 'Wati' || name2 == 'Wati' || name1 == 'Siti' || name2 == 'Siti' || name1 == 'Rika' || name2 == 'Rika' || name1 == 'Tuti' || name2 == 'Tuti' || name1 == 'Leti' || name2 == 'Leti' || name1 == 'Mila' || name2 == 'Mila' || name1 == 'Nora' || name2 == 'Nora' || name1 == 'Luna' || name2 == 'Luna' || name1 == 'Maya' || name2 == 'Maya' || name1 == 'Nana' || name2 == 'Nana' || name1 == 'Cora' || name2 == 'Cora' || name1 == 'Nova' || name2 == 'Nova' || name1 == 'Jane' || name2 == 'Jane' || name1 == 'Lisa' || name2 == 'Lisa' || name1 == 'Lana' || name2 == 'Lana' || name1 == 'Leni' || name2 == 'Leni' || name1 == 'Lexi' || name2 == 'Lexi' || name1 == 'Sasa' || name2 == 'Sasa' || name1 == 'Mira' || name2 == 'Mira' || name1 == 'Mara' || name2 == 'Mara' || name1 == 'Noni' || name2 == 'Noni' || name1 == 'Rini' || name2 == 'Rini' || name1 == 'Miya' || name2 == 'Miya' || name1 == 'Nala' || name2 == 'Nala' || name1 == 'Zara' || name2 == 'Zara' || name1 == 'Vada' || name2 == 'Vada' || name1 == 'Yara' || name2 == 'Yara' || name1 == 'Yodo' || name2 == 'Yodo' || name1 == 'Dita' || name2 == 'Dita' || name1 == 'Mina' || name2 == 'Mina' || name1 == 'Tina' || name2 == 'Tina' || name1 == 'Sara' || name2 == 'Sara' || name1 == 'Hana' || name2 == 'Hana' || name1 == 'Gita' || name2 == 'Gita' || name1 == 'Lita' || name2 == 'Lita' || name1 == 'Liya' || name2 == 'Liya') {
+    if (
+        check('wati') == 1 || check('siti') == 1 || check('rika') == 1 || check('siti') == 1 || check('lati') == 1 || check('mila') == 1 || check('nora') == 1 || check('luna') == 1 || check('maya') == 1 || check('nana') == 1 || check('cora') == 1 || check('nova') == 1 || check('jane') == 1 || check('lisa') == 1 || check('lana') == 1 || check('leni') == 1 || check('lexi') == 1 || check('sasa') == 1 || check('mira') == 1 || check('mara') == 1 || check('noni') == 1 || check('rini') == 1 || check('miya') == 1 || check('nala') == 1 || check('zara') == 1 || check('vada') == 1 || check('yara') == 1 || check('yodo') == 1 || check('dita') == 1 || check('mina') == 1 || check('tina') == 1 || check('sara') == 1 || check('hana') == 1 || check('gita') == 1 || check('lita') == 1 || check('liya') == 1
+    ) {
         return femaleSrc;
     } else {
         return maleSrc;
     }
 }
-
+function check(name) {
+    if (name1.toLowerCase() == name || name2.toLowerCase() == name) {
+        return 1;
+    } return 0;
+}
 let search = false;
 
 let count = 1;
@@ -94,13 +100,13 @@ function passElemSet() {
             count++;
         }
     } else if (searchElem.value.substring(0, 1) == '#' && typeof parseInt(searchElem.value.substring(1, searchElem.value.length)) == 'number') {
-        if(searchElem.value.substring(1, searchElem.value.length) == age) {
+        if (searchElem.value.substring(1, searchElem.value.length) == age) {
         } else if (search == true && searchElem.value.length > 1 && parseInt(searchElem.value.substring(1, searchElem.value.length)) >= 13 && parseInt(searchElem.value.substring(1, searchElem.value.length)) <= 55) {
             genButton.click();
             count++;
         }
     } else if (searchElem.value.length == 9) {
-        if (searchElem.value.substring(4, 5) == ' ' && searchElem.value == `${name1} ${name2}`) {
+        if (searchElem.value.substring(4, 5) == ' ' && searchElem.value.toLowerCase() == `${name1.toLowerCase()} ${name2.toLowerCase()}`) {
         }
         else if (search == true) {
             genButton.click();
@@ -108,7 +114,7 @@ function passElemSet() {
         }
     }
     else if (searchElem.value.length == 4) {
-        if (searchElem.value == name1 || searchElem.value == name2) {
+        if (searchElem.value.toLowerCase() == name1.toLowerCase() || searchElem.value.toLowerCase() == name2.toLowerCase()) {
         }
         else if (search == true) {
             genButton.click();

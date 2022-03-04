@@ -22,11 +22,11 @@ button:active{
 input{
     margin-bottom: 2vmax;
 }
-.search-btn-container{
-    display: inline-block;
-}
 input::placeholder{
     color: #ddd;
+}
+.search-btn-container{
+    display: inline-block;
 }
 .wrapper{
     display: flex;
