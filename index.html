@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <link rel='stylesheet' href='style.css'>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <input type="text" id="search" placeholder="Search">
+            <div class="search-btn-container">
+                <button class="search-cancel-btn search-btn" onclick="search=false">❌</button>
+                <button class="search-do-btn search-btn" onclick="search=true">✔️</button>
+            </div>
+            <div class="user">
+                <span id="avatar">
+                    <img src="Img/Developer.png" alt="Avatar" class="avatar">
+                    <img src="Img/StudentGirl.png" alt="Avatar" class="avatar">
+                    <img src="Img/Farmer.png" alt="Avatar" class="avatar">
+                    <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Avatar" class="avatar">
+                    <img src="https://www.w3schools.com/w3images/avatar4.png" alt="Avatar" class="avatar">
+                    <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" class="avatar">
+                </span>
+                <div class="user-info">
+                    <!-- Name -->
+                    <h1><span id="name1">John</span> <span id="name2">Doe</span></h1>
+                    <!-- Job -->
+                    <h2 id="job">Web Developer</h2>
+                    <!-- Age -->
+                    <h2>Age : <span id="age">35</span></h2>
+                    <!-- Password -->
+                    <h2>Password : <span id="pass"></span></h2>
+                </div>
+            </div>
+            <button id="genButton" onclick="generate()">Generate Person</button>
+        </div>
+    </div>
+
+    <script src='script.js'></script>
+</body>
+
+</html>
