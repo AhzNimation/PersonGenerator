@@ -71,7 +71,7 @@ button, input, .user{
 }
 .avatar{
     margin-right: 20px;
-    border-radius: 50%;
+    border-radius: 5vmax;
     aspect-ratio: 1 / 1;
     width: 150px;
     z-index: -1;
@@ -85,27 +85,31 @@ button, input, .user{
 }
 
 
-@media (max-width: 450px){
+@media (max-width: 700px){
     html{
         margin-top: 30px;
     }
     .user{
-        display: block;
-        margin: auto;
+        margin: 0 auto;
         width: fit-content;
         text-align: center;
     }
+    .user *{
+        font-size: .9em;
+    }
     .avatar{
-        width: 40vw;
+        width: 20vw;
+        margin-right: 1.5vmax;
+        border-radius: 5vmax;
+        aspect-ratio: 2/3;
+        object-fit: cover;
+        max-height: 150px;
     }
     .user-info{
         margin-top: 20px;
     }
     button, input{
         width: 80%;
-    }
-    button{
-        margin: 15px 0;
     }
     .search-btn{
         display: inline-block;
@@ -117,5 +121,29 @@ button, input, .user{
         padding: 0;
         width: fit-content;
         margin: 0 auto;
+    }
+    button, input, input::placeholder{
+        font-size: 1rem;
+        display: block;
+        margin: 1vmax auto;
+    }
+}
+@media (max-width: 450px){
+    .user{
+        display: block;
+    }
+    .avatar{
+        width: 50vw;
+        margin: auto;
+        border-radius: 5vmax;
+        aspect-ratio: 1 / 1;
+    }
+    .user-info{
+        margin-top: 20px;
+    }
+    button, input, input::placeholder{
+        font-size: .8rem;
+        display: block;
+        margin: 1vmax auto;
     }
 }
