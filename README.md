@@ -1,13 +1,13 @@
 # Person Generator 🧑🏻
 Person Generator is a simple program that generates random people.
 ## Features
-Generates random people with:
+### Generates random people with:
 - random **Names**
 - random **Job**👨🏻‍🌾
 - random **Ages**👴🏻
 - random **Salary**💵
 - random **Password**
-Search for a person by:
+### Search for a person by:
 - **Name**
 - **Job**
 - **Age**
