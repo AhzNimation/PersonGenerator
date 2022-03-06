@@ -104,46 +104,58 @@ function passElemSet() {
 
     jobElem.innerHTML = job;
 
-    ageElem.innerHTML = age;
+    ageElem.innerHTML = age; 
 
     salaryElem.innerHTML = salary + ' / Month';
 
     avatarElem.innerHTML = `<img src='${src}' alt="Avatar" class="avatar">`;
 
-    if (searchElem.value.substring(0, 1) == '@') {
-        if (searchElem.value.substring(1, searchElem.value.length).toLowerCase() == job.toLowerCase()) {
-        } else if (search == true && searchElem.value.length > 1) {
-            genButton.click();
+    if (search == true) {
+        if (searchElem.value.substring(0, 1) == '@') {
+            if (searchElem.value.substring(1, searchElem.value.length).toLowerCase() == job.toLowerCase()) {
+            } else if (searchElem.value.length > 1) {
+                genButton.click();
+            }
+        } else if (searchElem.value.substring(0, 1) == '#' && typeof parseInt(searchElem.value.substring(1, searchElem.value.length)) == 'number') {
+            if (searchElem.value.substring(1, searchElem.value.length) == age) {
+            } else if (searchElem.value.length > 1 && parseInt(searchElem.value.substring(1, searchElem.value.length)) >= 13 && parseInt(searchElem.value.substring(1, searchElem.value.length)) <= 55) {
+                genButton.click();
+            }
+        } else if (searchElem.value.substring(0, 1) == '?') {
+            if (searchElem.value.substring(1, searchElem.value.length).toLowerCase() == 'female' && genderByName(1, 0) == 1) {
+                genButton.click();
+            } else if (searchElem.value.substring(1, searchElem.value.length).toLowerCase() == 'male' && genderByName(1, 0) == 0) {
+                genButton.click();
+            }
+        } else if (searchElem.value.substring(0, 1) == '$' && typeof parseInt(searchElem.value.substring(2, searchElem.value.length)) == 'number' && parseInt(searchElem.value.substring(2, searchElem.value.length)) > 1200 && parseInt(searchElem.value.substring(2, searchElem.value.length)) < 10000) {
+            if (searchElem.value.substring(1, 2) == '>' && parseInt(searchElem.value.substring(2, searchElem.value.length)) >= salary) {
+                genButton.click();
+            } else if (searchElem.value.substring(1, 2) == '<' && parseInt(searchElem.value.substring(2, searchElem.value.length)) <= salary) {
+                genButton.click();
+            }
+        } else if (searchElem.value.substring(0, 1) == '1' && searchElem.value.length == 5) {
+            if (searchElem.value.toLowerCase() == name1.toLowerCase()) {
+            } else {
+                genButton.click();
+            }
+        } else if (searchElem.value.substring(0, 1) == '2' && searchElem.value.length == 5) {
+            if (searchElem.value.toLowerCase() == name2.toLowerCase()) {
+            } else {
+                genButton.click();
+            }
+        } else if (searchElem.value.length == 9) {
+            if (searchElem.value.substring(4, 5) == ' ' && searchElem.value.toLowerCase() == `${name1.toLowerCase()} ${name2.toLowerCase()}`) {
+            }
+            else {
+                genButton.click();
+            }
         }
-    } else if (searchElem.value.substring(0, 1) == '#' && typeof parseInt(searchElem.value.substring(1, searchElem.value.length)) == 'number') {
-        if (searchElem.value.substring(1, searchElem.value.length) == age) {
-        } else if (search == true && searchElem.value.length > 1 && parseInt(searchElem.value.substring(1, searchElem.value.length)) >= 13 && parseInt(searchElem.value.substring(1, searchElem.value.length)) <= 55) {
-            genButton.click();
-        }
-    } else if (searchElem.value.substring(0, 1) == '?' && search == true) {
-        if (searchElem.value.substring(1, searchElem.value.length).toLowerCase() == 'female' && genderByName(1, 0) == 1) {
-            genButton.click();
-        } else if (searchElem.value.substring(1, searchElem.value.length).toLowerCase() == 'male' && genderByName(1, 0) == 0) {
-            genButton.click();
-        }
-    } else if (searchElem.value.substring(0, 1) == '$' && search == true && typeof parseInt(searchElem.value.substring(2, searchElem.value.length)) == 'number' && parseInt(searchElem.value.substring(2, searchElem.value.length)) > 1200 && parseInt(searchElem.value.substring(2, searchElem.value.length)) < 10000) {
-        if (searchElem.value.substring(1, 2) == '>' && parseInt(searchElem.value.substring(2, searchElem.value.length)) >= salary) {
-            genButton.click();
-        } else if (searchElem.value.substring(1, 2) == '<' && parseInt(searchElem.value.substring(2, searchElem.value.length)) <= salary) {
-            genButton.click();
-        }
-    } else if (searchElem.value.length == 9) {
-        if (searchElem.value.substring(4, 5) == ' ' && searchElem.value.toLowerCase() == `${name1.toLowerCase()} ${name2.toLowerCase()}`) {
-        }
-        else if (search == true) {
-            genButton.click();
-        }
-    }
-    else if (searchElem.value.length == 4) {
-        if (searchElem.value.toLowerCase() == name1.toLowerCase() || searchElem.value.toLowerCase() == name2.toLowerCase()) {
-        }
-        else if (search == true) {
-            genButton.click();
+        else if (searchElem.value.length == 4) {
+            if (searchElem.value.toLowerCase() == name1.toLowerCase() || searchElem.value.toLowerCase() == name2.toLowerCase()) {
+            }
+            else {
+                genButton.click();
+            }
         }
     }
     setTimeout(passElemSet);

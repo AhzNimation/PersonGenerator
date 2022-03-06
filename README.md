@@ -9,6 +9,8 @@ Person Generator is a simple program that generates random people.
 - random **Password**
 ### Search for a person by:
 - **Name**
+- **First Name**
+- **Last Name**
 - **Job**
 - **Age**
 - **Salary**
@@ -16,7 +18,9 @@ Person Generator is a simple program that generates random people.
 ## How To Use
 - To find people, you can click the **Generate Button**
 - To search people by name, you can type the name
-> The name first and third letters must be a consonant,  the second and fourth letters must be vocals
+- To search people by first name, you can type 1name
+- To search people by last name, you can type 2name
+> For Search by Name : The name first and third letters must be a consonant,  the second and fourth letters must be vocals
 - To search for people by job, you can type @job name
 > All the job: Web Developer, App Developer, Game Developer, Lecturer, Teacher, Mayor, Student, Farmer, Actress
 - To search for people by age, you can type #age
