@@ -74,20 +74,13 @@ function generate() {
 generate();
 
 function salarySet(minimumSalary, maximumSalary) {
-    salary = `${Math.floor((minimumSalary + Math.floor(Math.random() * (maximumSalary - minimumSalary))) / 12)} / Month`;
+    salary = Math.floor((minimumSalary + Math.floor(Math.random() * (maximumSalary - minimumSalary))) / 12);
 }
 
 
-
-/* 
-
-    
-    
-    */
-
 function genderByName(maleSrc, femaleSrc) {
     if (
-        check('wati') == 1 || check('siti') == 1 || check('rika') == 1 || check('siti') == 1 || check('lati') == 1 || check('mila') == 1 || check('nora') == 1 || check('luna') == 1 || check('maya') == 1 || check('nana') == 1 || check('cora') == 1 || check('nova') == 1 || check('jane') == 1 || check('lisa') == 1 || check('lana') == 1 || check('leni') == 1 || check('lexi') == 1 || check('sasa') == 1 || check('mira') == 1 || check('mara') == 1 || check('noni') == 1 || check('rini') == 1 || check('miya') == 1 || check('nala') == 1 || check('zara') == 1 || check('vada') == 1 || check('yara') == 1 || check('yodo') == 1 || check('dita') == 1 || check('mina') == 1 || check('tina') == 1 || check('sara') == 1 || check('hana') == 1 || check('gita') == 1 || check('lita') == 1 || check('liya') == 1 || check('xeci') == 1 || check('cece') == 1 || check('Jesa') == 1 || check('suzu') == 1 || check('miti') == 1 || check('rosa') == 1 || check('roya') == 1 || check('fana') == 1 || check('yaki') == 1 || check('padi') == 1 || check('vime') == 1 || check('meyu') == 1 || check('novi') == 1 || check('nira') == 1 || check('jiha') == 1 || check('fuji') == 1 || check('fumi') == 1 || check('vumi') == 1 || check('sizu') == 1 || check('yana') == 1 || check('hela') == 1 || check('yena') == 1 || check('veti') == 1 || check('Futi') == 1 || check('sumi') == 1 || check('ceye') == 1 || check('kisi') == 1 || check('susi') == 1 || check('tumi') == 1 || check('waya') == 1 || check('ruyi') == 1 || check('fuyi') == 1 || check('feme') == 1 || check('ruvi') == 1 || check('fuja') == 1 || check('puja') == 1 || check('wuma') == 1 || check('lala') == 1 || check('lili') == 1 || check('lulu') == 1 || check('lolo') == 1 
+        check('wati') == 1 || check('siti') == 1 || check('rika') == 1 || check('siti') == 1 || check('lati') == 1 || check('mila') == 1 || check('nora') == 1 || check('luna') == 1 || check('maya') == 1 || check('nana') == 1 || check('cora') == 1 || check('nova') == 1 || check('jane') == 1 || check('lisa') == 1 || check('lana') == 1 || check('leni') == 1 || check('lexi') == 1 || check('sasa') == 1 || check('mira') == 1 || check('mara') == 1 || check('noni') == 1 || check('rini') == 1 || check('miya') == 1 || check('nala') == 1 || check('zara') == 1 || check('vada') == 1 || check('yara') == 1 || check('yodo') == 1 || check('dita') == 1 || check('mina') == 1 || check('tina') == 1 || check('sara') == 1 || check('hana') == 1 || check('gita') == 1 || check('lita') == 1 || check('liya') == 1 || check('xeci') == 1 || check('cece') == 1 || check('Jesa') == 1 || check('suzu') == 1 || check('miti') == 1 || check('rosa') == 1 || check('roya') == 1 || check('fana') == 1 || check('yaki') == 1 || check('padi') == 1 || check('vime') == 1 || check('meyu') == 1 || check('novi') == 1 || check('nira') == 1 || check('jiha') == 1 || check('fuji') == 1 || check('fumi') == 1 || check('vumi') == 1 || check('sizu') == 1 || check('yana') == 1 || check('hela') == 1 || check('yena') == 1 || check('veti') == 1 || check('Futi') == 1 || check('sumi') == 1 || check('ceye') == 1 || check('kisi') == 1 || check('susi') == 1 || check('tumi') == 1 || check('waya') == 1 || check('ruyi') == 1 || check('fuyi') == 1 || check('feme') == 1 || check('ruvi') == 1 || check('fuja') == 1 || check('puja') == 1 || check('wuma') == 1 || check('lala') == 1 || check('lili') == 1 || check('lulu') == 1 || check('lolo') == 1
     ) {
         return femaleSrc;
     } else {
@@ -113,7 +106,7 @@ function passElemSet() {
 
     ageElem.innerHTML = age;
 
-    salaryElem.innerHTML = salary;
+    salaryElem.innerHTML = salary + ' / Month';
 
     avatarElem.innerHTML = `<img src='${src}' alt="Avatar" class="avatar">`;
 
@@ -121,13 +114,11 @@ function passElemSet() {
         if (searchElem.value.substring(1, searchElem.value.length).toLowerCase() == job.toLowerCase()) {
         } else if (search == true && searchElem.value.length > 1) {
             genButton.click();
-            count++;
         }
     } else if (searchElem.value.substring(0, 1) == '#' && typeof parseInt(searchElem.value.substring(1, searchElem.value.length)) == 'number') {
         if (searchElem.value.substring(1, searchElem.value.length) == age) {
         } else if (search == true && searchElem.value.length > 1 && parseInt(searchElem.value.substring(1, searchElem.value.length)) >= 13 && parseInt(searchElem.value.substring(1, searchElem.value.length)) <= 55) {
             genButton.click();
-            count++;
         }
     } else if (searchElem.value.substring(0, 1) == '?' && search == true) {
         if (searchElem.value.substring(1, searchElem.value.length).toLowerCase() == 'female' && genderByName(1, 0) == 1) {
@@ -135,12 +126,17 @@ function passElemSet() {
         } else if (searchElem.value.substring(1, searchElem.value.length).toLowerCase() == 'male' && genderByName(1, 0) == 0) {
             genButton.click();
         }
+    } else if (searchElem.value.substring(0, 1) == '$' && search == true && typeof parseInt(searchElem.value.substring(2, searchElem.value.length)) == 'number' && parseInt(searchElem.value.substring(2, searchElem.value.length)) > 1200 && parseInt(searchElem.value.substring(2, searchElem.value.length)) < 10000) {
+        if (searchElem.value.substring(1, 2) == '>' && parseInt(searchElem.value.substring(2, searchElem.value.length)) >= salary) {
+            genButton.click();
+        } else if (searchElem.value.substring(1, 2) == '<' && parseInt(searchElem.value.substring(2, searchElem.value.length)) <= salary) {
+            genButton.click();
+        }
     } else if (searchElem.value.length == 9) {
         if (searchElem.value.substring(4, 5) == ' ' && searchElem.value.toLowerCase() == `${name1.toLowerCase()} ${name2.toLowerCase()}`) {
         }
         else if (search == true) {
             genButton.click();
-            count++;
         }
     }
     else if (searchElem.value.length == 4) {
@@ -148,7 +144,6 @@ function passElemSet() {
         }
         else if (search == true) {
             genButton.click();
-            count++;
         }
     }
     setTimeout(passElemSet);
