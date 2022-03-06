@@ -41,4 +41,4 @@ Person Generator is a simple program that generates random people.
 - [Instagram](https://www.instagram.com/ahznimation24/)
 - [LinkedIn](https://www.linkedin.com/in/fatih-ahza-qusyairi-90b619184/)
 ## Copyright
-© 2020 Fatih Ahza Qusyairi
+© 2022 Fatih Ahza Qusyairi
