@@ -134,12 +134,12 @@ function passElemSet() {
                 genButton.click();
             }
         } else if (searchElem.value.substring(0, 1) == '1' && searchElem.value.length == 5) {
-            if (searchElem.value.toLowerCase() == name1.toLowerCase()) {
+            if (searchElem.value.substring(1, searchElem.value.length).toLowerCase() == name1.toLowerCase()) {
             } else {
                 genButton.click();
             }
         } else if (searchElem.value.substring(0, 1) == '2' && searchElem.value.length == 5) {
-            if (searchElem.value.toLowerCase() == name2.toLowerCase()) {
+            if (searchElem.value.substring(1, searchElem.value.length).toLowerCase() == name2.toLowerCase()) {
             } else {
                 genButton.click();
             }
